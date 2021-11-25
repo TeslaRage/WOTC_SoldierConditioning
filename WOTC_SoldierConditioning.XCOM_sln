@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# XCOM ModBuddy Solution File, Format Version 11.00
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{5DAE07AF-E217-45C1-8DE7-FF99D6011E8A}") = "WOTC_SoldierConditioning", "WOTC_SoldierConditioning\WOTC_SoldierConditioning.x2proj", "{9BFB1794-1E53-4CF7-8D7C-5036C1E49DF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|XCOM 2 = Default|XCOM 2
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BFB1794-1E53-4CF7-8D7C-5036C1E49DF7}.Default|XCOM 2.ActiveCfg = Default|XCOM 2
+		{9BFB1794-1E53-4CF7-8D7C-5036C1E49DF7}.Default|XCOM 2.Build.0 = Default|XCOM 2
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
