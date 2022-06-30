@@ -6,9 +6,9 @@ static function UICSTrainingComplete(StateObjectReference UnitRef, X2AbilityTemp
 
 	BuildCSUIAlert(PropertySet, 'eAlert_TrainingComplete', CSTrainingCompleteCB, '', "Geoscape_CrewMemberLevelledUp", true);
 	class'X2StrategyGameRulesetDataStructures'.static.AddDynamicIntProperty(PropertySet, 'UnitRef', UnitRef.ObjectID);
-    class'X2StrategyGameRulesetDataStructures'.static.AddDynamicNameProperty(PropertySet, 'AbilityTemplate', AbilityTemplate.DataName);
-    class'X2StrategyGameRulesetDataStructures'.static.AddDynamicStringProperty(PropertySet, 'ExtraInfo', ExtraInfo);  
-	class'X2StrategyGameRulesetDataStructures'.static.AddDynamicStringProperty(PropertySet, 'Stat', Stat);    
+	class'X2StrategyGameRulesetDataStructures'.static.AddDynamicNameProperty(PropertySet, 'AbilityTemplate', AbilityTemplate.DataName);
+	class'X2StrategyGameRulesetDataStructures'.static.AddDynamicStringProperty(PropertySet, 'ExtraInfo', ExtraInfo);  
+	class'X2StrategyGameRulesetDataStructures'.static.AddDynamicStringProperty(PropertySet, 'Stat', Stat);	
 	class'XComPresentationLayerBase'.static.QueueDynamicPopup(PropertySet);
 }
 
@@ -20,7 +20,7 @@ static function BuildCSUIAlert(
 	string SoundToPlay,
 	bool bImmediateDisplay = true)
 {	
-    class'X2StrategyGameRulesetDataStructures'.static.BuildDynamicPropertySet(PropertySet, 'UIAlert_ConditionSoldier', AlertName, CallbackFunction, bImmediateDisplay, true, true, false);
+	class'X2StrategyGameRulesetDataStructures'.static.BuildDynamicPropertySet(PropertySet, 'UIAlert_ConditionSoldier', AlertName, CallbackFunction, bImmediateDisplay, true, true, false);
 	class'X2StrategyGameRulesetDataStructures'.static.AddDynamicNameProperty(PropertySet, 'EventToTrigger', EventToTrigger);
 	class'X2StrategyGameRulesetDataStructures'.static.AddDynamicStringProperty(PropertySet, 'SoundToPlay', SoundToPlay);
 }
@@ -30,7 +30,7 @@ simulated function CSTrainingCompleteCB(Name eAction, out DynamicPropertySet Ale
 	local XComGameState NewGameState;
 	local XComGameState_Unit UnitState;
 	
-    `LOG(eAction, class'X2DownloadableContentInfo_WOTC_SoldierConditioning'.default.bEnableLog, 'WOTC_SolderConditioning');
+	`LOG(eAction, class'X2DownloadableContentInfo_WOTC_SoldierConditioning'.default.bEnableLog, 'WOTC_SolderConditioning');
 	if( eAction == 'eUIAction_Accept' || eAction == 'eUIAction_Cancel' )
 	{
 		// Flag the new class popup as having been seen
@@ -40,10 +40,14 @@ simulated function CSTrainingCompleteCB(Name eAction, out DynamicPropertySet Ale
 		UnitState.bNeedsNewClassPopup = false;		
 		`GAMERULES.SubmitGameState(NewGameState);
 
-        if( eAction == 'eUIAction_Cancel' )
-        {
-            GoToTrainingCenter();
-        }
+		if( eAction == 'eUIAction_Cancel' )			// Go to Training Center
+		{
+			GoToTrainingCenter();
+		}
+		else if( eAction == 'eUIAction_Accept' ) 	// Carry on
+		{
+			`GAME.GetGeoscape().Pause();
+		}
 	}
 }
 
