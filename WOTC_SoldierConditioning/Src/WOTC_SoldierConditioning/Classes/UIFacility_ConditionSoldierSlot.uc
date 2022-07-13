@@ -4,8 +4,6 @@ var localized string m_strConditionSoldierDialogTitle;
 var localized string m_strConditionSoldierDialogText;
 var localized string m_strStopConditionSoldierDialogTitle;
 var localized string m_strStopConditionSoldierDialogText;
-var localized string m_strNoSoldiersTooltip;
-var localized string m_strSoldiersAvailableTooltip;
 
 //-----------------------------------------------------------------------------
 simulated function ShowDropDown()

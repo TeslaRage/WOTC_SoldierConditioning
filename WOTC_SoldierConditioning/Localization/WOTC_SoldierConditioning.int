@@ -23,6 +23,5 @@ m_strAbility="Ability"
 m_strAbilities="Abilities"
 
 [UIAlert_ConditionSoldier]
-m_strContinueCSTraining="CONTINUE"
 m_strBonusCS="Stat Improvement, Abilities and AP"
 m_strColorCS="'#3ABD23'"

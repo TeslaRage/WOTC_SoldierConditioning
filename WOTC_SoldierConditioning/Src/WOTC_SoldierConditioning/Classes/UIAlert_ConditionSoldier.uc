@@ -1,6 +1,5 @@
 class UIAlert_ConditionSoldier extends UIAlert;
 
-var localized string m_strContinueCSTraining;
 var localized string m_strBonusCS;
 
 simulated function BuildAlert()
@@ -85,7 +84,7 @@ simulated function BuildConditionTrainingCompleteAlert(string TitleLabel)
 	LibraryPanel.MC.QueueString(AbilityName); 		 // Training description as per UIChooseClass_ConditionSoldier
 	LibraryPanel.MC.QueueString(AbilityDescription); // Extra Info from XComGameState_HeadquartersProjectConditionSoldier
 	LibraryPanel.MC.QueueString(m_strCarryOn);	
-	LibraryPanel.MC.QueueString(m_strContinueCSTraining);
+	LibraryPanel.MC.QueueString(m_strContinueTraining);
 	LibraryPanel.MC.EndOp();
 	GetOrStartWaitingForStaffImage();
 
